@@ -1,0 +1,1 @@
+print('ini adalah program pertama bahasa korea')
