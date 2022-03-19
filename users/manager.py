@@ -16,3 +16,4 @@ class UserManager(BaseUserManager):
             date_joined=now,
             **extra_fields
         )
+
