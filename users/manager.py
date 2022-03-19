@@ -17,3 +17,7 @@ class UserManager(BaseUserManager):
             **extra_fields
         )
 
+        #set password
+        user.set_password(password)
+        user.save(using=self.db)
+        return user
