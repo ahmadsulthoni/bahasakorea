@@ -13,5 +13,6 @@ DATABASES = {
 #Overide Installed Apps
 INSTALLED_APPS += [
     'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
 
 ]
