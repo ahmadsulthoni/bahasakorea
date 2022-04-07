@@ -1,5 +1,8 @@
 from django.db import models
+
 from users.models import Users
+
+
 # Create your models here.
 
 class Comment(models.Model):
@@ -10,14 +13,14 @@ class Comment(models.Model):
     def __str__(self):
         return f'{self.users} - {self.text_comment}'
 
-#photo models
+
+# photo models
 class Photos(models.Model):
     caption = models.TextField()
     users = models.ForeignKey(Users, on_delete=models.CASCADE)
     memes_photo = models.ImageField()
     upload = models.DateTimeField(auto_now_add=True)
-    comments = models.ForeignKey('Comment',on_delete=models.CASCADE,null=True, blank=True)
+    comments = models.ForeignKey('Comment', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return f"{self.upload}"
-

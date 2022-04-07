@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = True
 
-#Database Config
+# Database Config
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -10,7 +10,7 @@ DATABASES = {
     }
 }
 
-#Overide Installed Apps
+# Overide Installed Apps
 INSTALLED_APPS += [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',

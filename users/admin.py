@@ -7,8 +7,8 @@ from .models import Users
 
 class UserAdmin(BaseUserAdmin):
     fieldsets = (
-        (None, {'fields':('email','password','name',)}),
-        ('Permissions',{'fields':(
+        (None, {'fields': ('email', 'password', 'name',)}),
+        ('Permissions', {'fields': (
             'is_active',
             'is_staff',
             'is_superuser',
@@ -20,16 +20,17 @@ class UserAdmin(BaseUserAdmin):
         (
             None,
             {
-                'classes' : ('wide',),
-                'fields' : ('email','password1','password2')
+                'classes': ('wide',),
+                'fields': ('email', 'password1', 'password2')
             }
-         ),
+        ),
     )
 
-    list_display = ('email','name','is_staff','last_login',)
-    list_filter = ('is_staff', 'is_superuser','is_active','groups')
+    list_display = ('email', 'name', 'is_staff', 'last_login',)
+    list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ('groups', 'user_permissions')
+
 
 admin.site.register(Users, UserAdmin)

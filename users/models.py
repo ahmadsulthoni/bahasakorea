@@ -1,9 +1,9 @@
+# Create your models here.
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.db import models
 
-# Create your models here.
-from django.contrib.auth.models import AbstractUser,PermissionsMixin
-
 from .manager import UserManager
+
 
 class Users(AbstractUser, PermissionsMixin):
     email = models.EmailField(max_length=254, unique=True)
@@ -14,15 +14,14 @@ class Users(AbstractUser, PermissionsMixin):
     last_login = models.DateTimeField(auto_now=True)
     date_joined = models.DateTimeField(auto_now_add=True)
 
-    #setting field
+    # setting field
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    #user manager
+    # user manager
     objects = UserManager()
 
     class Meta:
         abstract = False
-

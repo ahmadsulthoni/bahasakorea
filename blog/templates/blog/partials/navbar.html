@@ -1,0 +1,40 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 mb-5 bg-body rounded fixed-top ">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a href="" class="navbar-brand">Bahasa Korea</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-tags="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item fixed-position">
+                    <input type="search" class="form-control me-2 rounded-pill search-field" name="search"
+                           placeholder="Search Meme" aria-label="search">
+                </li>
+                {% if user.is.authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-bs-toggle="dropdown" rule="button" aria-expanded="true">
+                        <img class="profile-img-nav rounded-circles" src="https://picture.photos/200" alt="" srcset="">
+                    </a>
+                    <ul class="nav-item dropdown-menu">
+                        <li><a class="dropdown-item" href="#">See Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item fixed-position">
+                    <a class="nav-link btn-login rounded-pill text-light" href="{% url 'acount_login' %}">Upload</a>
+                </li>
+                {% else %}
+                <li class="nav-item fixed-position">
+                    <a class="nav-link btn-login rounded-pill text-light" href="{% url 'acount_login' %}">Login</a>
+                </li>
+                <li class="nav-item fixed-position"><a href="{% url 'acount_signup' %}"
+                                                       class="nav-link btn-signup rounded-pill">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
