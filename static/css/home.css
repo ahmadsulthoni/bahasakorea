@@ -50,3 +50,72 @@ html body{
     border-radius: 30px;
     color: #644f4f;
 }
+
+/* slider */
+.container-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    hight: 20vh;
+}
+
+.horizontal-scroll {
+    width: 800px;
+    height: 125px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-batween;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    transition: 0.5s all ease-out;
+}
+
+.story-circle {
+    background-color: linier-gradient(rgb(231,0,231,), rgb(255,115,0));
+    width: 100px;
+    height: 100px;
+    margin: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.story-text p {
+    text-align: center;
+}
+
+.story-circle img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transform: rotate(-45deg);
+}
+
+.horizontal-scroll .btn-scroll{
+    background-color: #fff;
+    box-shadow:0 0 10px #999;
+    color: #999;
+    border: 0;
+    border-radius: 50%;
+    margin: 0 5px;
+    z-index: 1;
+    cursor: pointer;
+    transsition: 1s;
+}
+/* slider */
